@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from src.app.services.services import PokemonRepository  # Ensure this contains CRUD methods like create, read, etc.
+from src.app.services.services import PokemonRepository  
 from src.app.schemas.schemas import Pokemon as PokemonSchema, PokemonUpdate
 from src.app.auth.auth import JWTBearer
 from src.app.config.database import get_db
@@ -13,8 +13,8 @@ def get_all_pokemon(
     page: int = 1, size: int = 10, db: Session = Depends(get_db), current_user: dict = Depends(JWTBearer)
 ):
     """Fetch a paginated list of all Pokémon."""
-    repository = PokemonRepository(db)  # Use the service layer for database calls
-    return repository.get_all_pokemon(page, size)  # Implement pagination logic in the repository
+    repository = PokemonRepository(db)
+    return repository.get_all_pokemon(page, size)  
 
 # Endpoint to create a new Pokémon
 @router.post("/", dependencies=[Depends(JWTBearer())])
