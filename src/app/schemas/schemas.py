@@ -21,36 +21,33 @@ class Pokemon(BaseModel):
     xp: int = Field(gt=0)
     image_url: HttpUrl
     pokemon_url: HttpUrl
-    abilities: List[Ability]
-    stats: List[Stat]
-    types: List[Type]
+    abilities: Optional[List[Ability]]
+    stats: Optional[List[Stat]]
+    types: Optional[List[Type]]
 
 class PokemonCreate(BaseModel):
-    name: str
-    height: float
-    weight: float
-    xp: int
-    image_url: HttpUrl  # Use HttpUrl instead of Url
-    pokemon_url: HttpUrl
-    abilities: list
-    stats: list
-    types: list
-
-class PokemonUpdate(BaseModel):
     name: str
     height: int = Field(gt=0)
     weight: int = Field(gt=0)
     xp: int = Field(gt=0)
-    image_url: str
-    pokemon_url: str
-    abilities: List[Ability]
-    stats: List[Stat]
-    types: List[Type]
+    image_url: HttpUrl
+    pokemon_url: HttpUrl
+    abilities: Optional[List[Ability]]
+    stats: Optional[List[Stat]]
+    types: Optional[List[Type]]
+
+class PokemonUpdate(BaseModel):
+    name: Optional[str] = None
+    height: Optional[int] = None
+    weight: Optional[int] = None
+    xp: Optional[int] = None
+    image_url: Optional[str] = None
+    pokemon_url: Optional[str] = None
 
     class Config:
         orm_mode = True
 
-    # Custom method to serialize URLs to strings when updating
+
     def get_serialized_data(self):
         data = self.dict(exclude_unset=True)
         if 'image_url' in data and isinstance(data['image_url'], HttpUrl):

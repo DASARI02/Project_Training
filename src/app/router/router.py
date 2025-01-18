@@ -2,12 +2,18 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from src.app.services.services import PokemonRepository  
 from src.app.schemas.schemas import Pokemon as PokemonSchema, PokemonUpdate
+from src.app.schemas.schemas import PokemonCreate
 from src.app.auth.auth import JWTBearer
 from src.app.config.database import get_db
-
+from src.app.models.models import User
 router = APIRouter(prefix="/pokemon", tags=["Pokémon"])
 
-# Endpoint to get all Pokémon with pagination
+@router.get("/users", dependencies= [Depends(JWTBearer())])
+def get_users(db: Session = Depends(get_db)):
+    users = db.query(User).all()
+    return {"users": users}
+
+
 @router.get("/", dependencies=[Depends(JWTBearer())])
 def get_all_pokemon(
     page: int = 1, size: int = 10, db: Session = Depends(get_db), current_user: dict = Depends(JWTBearer)
@@ -16,48 +22,53 @@ def get_all_pokemon(
     repository = PokemonRepository(db)
     return repository.get_all_pokemon(page, size)  
 
-# Endpoint to create a new Pokémon
+
+import logging
+
+logger = logging.getLogger("uvicorn.error")
+
 @router.post("/", dependencies=[Depends(JWTBearer())])
 def create_pokemon(
-    pokemon: PokemonSchema,  # Pydantic schema that validates input
-    db: Session = Depends(get_db),  # Dependency that provides the DB session
-    current_user: dict = Depends(JWTBearer)  # JWT authorization
+    pokemon: PokemonCreate,  
+    db: Session = Depends(get_db),  # Ensuring to get session from dependency
+    current_user: dict = Depends(JWTBearer)  
 ):
     """Create a new Pokémon in the database."""
-    repository = PokemonRepository(db)
+    repository = PokemonRepository(db) 
     try:
-        # Ensure input is correctly processed, and any errors in repository layer are caught
-        return repository.create_pokemon(pokemon.dict())  # Pydantic validation ensures proper input data
+        return repository.create_pokemon(pokemon.dict()) 
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-# Endpoint to fetch a Pokémon by ID
+
 @router.get("/{pokemon_id}", dependencies=[Depends(JWTBearer())])
 def get_pokemon_by_id(
     pokemon_id: int,  
     db: Session = Depends(get_db),
     current_user: dict = Depends(JWTBearer)
 ):
-    """Fetch a Pokémon by its ID."""
     repository = PokemonRepository(db)
-    return repository.get_pokemon_by_id(pokemon_id)  # Ensure the repository handles this fetch correctly
+    pokemon = repository.get_pokemon_by_id(pokemon_id)
+    if pokemon is None:
+        raise HTTPException(status_code=404, detail="Pokémon not found")
+    return pokemon
+ 
 
-# Endpoint to update an existing Pokémon
-@router.put("/pokemon/{pokemon_id}")
-async def update_pokemon(pokemon_id: int, pokemon_update: PokemonUpdate, db: Session = Depends(get_db)):
-    # Create an instance of the repository
+
+@router.put("/pokemon/{pokemon_id}", dependencies=[Depends(JWTBearer())])
+async def update_pokemon(pokemon_id: int, pokemon_update: PokemonUpdate, db: Session = Depends(get_db), current_user: dict = Depends(JWTBearer)):
+
     repository = PokemonRepository(db)
     
-    # Pass the ID and dictionary of values to update
+
     try:
-        # Pass 'exclude_unset=True' to only update unset values
-        result = repository.update_pokemon(pokemon_id, pokemon_update.dict(exclude_unset=True))  # Notice how the dict is passed
+
+        result = repository.update_pokemon(pokemon_id, pokemon_update.dict(exclude_unset=True))  
         return {"message": "Pokemon updated successfully", "pokemon": result}
     except ValueError as error:
         raise HTTPException(status_code=404, detail=str(error))
 
 
-# Endpoint to delete a Pokémon by ID
 @router.delete("/{pokemon_id}", dependencies=[Depends(JWTBearer())])
 def delete_pokemon(
     pokemon_id: int,
@@ -67,7 +78,7 @@ def delete_pokemon(
     """Delete a Pokémon from the database."""
     repository = PokemonRepository(db)
     try:
-        repository.delete_pokemon(pokemon_id)  # Handle the deletion process
+        repository.delete_pokemon(pokemon_id) 
         return {"message": "Pokémon deleted successfully"}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
