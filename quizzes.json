@@ -1,0 +1,38 @@
+{
+    "quizzes": [
+        {
+            "title": "python Basics Quiz",
+            "language": "PYTHON",
+            "description": "A quiz to test your basic knowledge of python.",
+            "difficulty": "EASY",
+            "questions": [
+                {
+                    "question_text": "What is the capital of France?",
+                    "options": {"A": "Paris", "B": "London", "C": "Berlin", "D": "Madrid"},
+                    "correct_option": "A",
+                    "difficulty": "EASY"
+                },
+                {
+                    "question_text": "Who wrote 'To Kill a Mockingbird'?",
+                    "options": {"A": "Harper Lee", "B": "Mark Twain", "C": "J.K. Rowling", "D": "Ernest Hemingway"},
+                    "correct_option": "A",
+                    "difficulty": "MEDIUM"
+                }
+            ]
+        },
+        {
+            "title": "Advanced java Quiz",
+            "language": "JAVA",
+            "description": "A quiz to test your advanced knowledge of java.",
+            "difficulty": "MEDIUM",
+            "questions": [
+                {
+                    "question_text": "Who painted the Mona Lisa?",
+                    "options": {"A": "Vincent van Gogh", "B": "Pablo Picasso", "C": "Leonardo da Vinci", "D": "Claude Monet"},
+                    "correct_option": "C",
+                    "difficulty": "MEDIUM"
+                }
+            ]
+        }
+    ]
+}

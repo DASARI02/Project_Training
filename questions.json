@@ -1,0 +1,68 @@
+{
+    "questions": [
+        {
+            "question_text": "What is the capital of France?",
+            "language": "PYTHON",
+            "quiz_id": 1,
+            "options": {"A": "Paris", "B": "London", "C": "Berlin", "D": "Madrid"},
+            "correct_option": "A",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "Who wrote 'To Kill a Mockingbird'?",
+            "language": "PYTHON",
+            "quiz_id": 1,
+            "options": {"A": "Harper Lee", "B": "Mark Twain", "C": "J.K. Rowling", "D": "Ernest Hemingway"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the largest planet in our solar system?",
+            "language": "PYTHON",
+            "quiz_id": 1,
+            "options": {"A": "Earth", "B": "Mars", "C": "Jupiter", "D": "Saturn"},
+            "correct_option": "C",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "Who painted the Mona Lisa?",
+            "language": "JAVA",
+            "quiz_id": 2,
+            "options": {"A": "Vincent van Gogh", "B": "Pablo Picasso", "C": "Leonardo da Vinci", "D": "Claude Monet"},
+            "correct_option": "C",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the chemical symbol for water?",
+            "language": "C++",
+            "quiz_id": 3,
+            "options": {"A": "H2O", "B": "O2", "C": "CO2", "D": "NaCl"},
+            "correct_option": "A",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "What is the speed of light?",
+            "language": "PYTHON",
+            "quiz_id": 1,
+            "options": {"A": "300,000 km/s", "B": "150,000 km/s", "C": "450,000 km/s", "D": "600,000 km/s"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "Who discovered penicillin?",
+            "language": "JAVA",
+            "quiz_id": 2,
+            "options": {"A": "Marie Curie", "B": "Alexander Fleming", "C": "Isaac Newton", "D": "Albert Einstein"},
+            "correct_option": "B",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the powerhouse of the cell?",
+            "language": "C++",
+            "quiz_id": 3,
+            "options": {"A": "Nucleus", "B": "Ribosome", "C": "Mitochondria", "D": "Chloroplast"},
+            "correct_option": "C",
+            "difficulty": "EASY"
+        }
+    ]
+}
