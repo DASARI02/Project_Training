@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
-from src.app.schemas.schemas import QuizAttempt, QuizAttemptResult, QuizResponse, QuizResultsResponse, QuestionResponse, QuestionAttemptResult
+from src.app.schemas.schemas import QuizAttempt, QuizAttemptResult, QuizResponse, QuestionAttemptResult, QuizCreateRequest, QuizAttemptResult
 from src.app.services.quiz_service import QuizService
 from src.app.repository.quiz_repository import QuizRepository
 from sqlalchemy.orm import Session
@@ -26,15 +26,21 @@ async def upload_quizzes(file: UploadFile = File(...), db: Session = Depends(get
             quiz_service.add(quiz)
         
         return {"message": "Quizzes uploaded successfully"}
+    except json.JSONDecodeError as e:
+        logging.error(f"JSONDecodeError: {e}")
+        raise HTTPException(status_code=400, detail=f"Invalid JSON format: {e}")
+    except KeyError as e:
+        logging.error(f"KeyError: {e}")
+        raise HTTPException(status_code=400, detail=f"Missing key in JSON data: {e}")
     except Exception as e:
         logging.error(f"Error processing file: {e}")
         raise HTTPException(status_code=400, detail=f"Error processing file: {e}")
 
 
-@quiz_router.get("/quizzes/{quiz_id}", response_model=QuizResponse)
+@quiz_router.get("/quizzes/{quiz_id}")
 def get_quiz_by_id(quiz_id: int, db: Session = Depends(get_db)):
     quiz_service = QuizService(QuizRepository(db), db)
-    quiz = quiz_service.get_quiz_by_id(quiz_id)
+    quiz = quiz_service.get_questions_by_quiz_id(quiz_id)
     if not quiz:
         raise HTTPException(status_code=404, detail="Quiz not found")
     return quiz
@@ -51,42 +57,9 @@ def get_results_by_student_id(student_id: int, db: Session = Depends(get_db)):
     results = quiz_service.get_results_by_student_id(student_id)
     return results
 
-# @quiz_router.post("/attempt-quiz/{quiz_id}", response_model=QuizAttemptResult)
-# def attempt_quiz(quiz_id: int, quiz_attempt: QuizAttempt, db: Session = Depends(get_db)):
-#     quiz_service = QuizService(QuizRepository(db))
-#     result = quiz_service.attempt_quiz(quiz_id, quiz_attempt, db)
-#     return result
-
-# @quiz_router.get("/results/{student_id}", response_model=List[QuizResultsResponse])
-# def get_results_by_student_id(student_id: int, db: Session = Depends(get_db)):
-#     quiz_service = QuizService(QuizRepository(db))
-#     results = quiz_service.get_results_by_student_id(student_id)
-#     return results
-
-#@quiz_router.get("/questions", response_model=List[QuestionResponse])
-# def get_questions_by_language_and_difficulty(language: str, difficulty: str, db: Session = Depends(get_db)):
-#     quiz_service = QuizService(QuizRepository(db), db)
-#     questions = quiz_service.get_questions_by_language_and_difficulty(language, difficulty)
-#     if not questions:
-#         raise HTTPException(status_code=404, detail="Questions not found for the given language and difficulty")
-#     return questions
-
-#@quiz_router.get("/quiz/{quiz_id}/questions", response_model=List[QuestionResponse])
-# def get_questions_by_quiz_id(quiz_id: int, db: Session = Depends(get_db)):
-#     quiz_service = QuizService(QuizRepository(db), db)
-#     questions = quiz_service.get_questions_by_quiz_id(quiz_id)
-#     if not questions:
-#         raise HTTPException(status_code=404, detail="Questions not found for the given quiz ID")
-#     return questions
-
-
-# @quiz_router.get("/{quiz_id}", response_model=QuizResponse)
-# def get_quiz(quiz_id: int, db: Session = Depends(get_db)):
-#     quiz_service = QuizService(QuizRepository(db), db)
-#     quiz = quiz_service.get_quiz_by_id(quiz_id)
-#     return quiz
-
-# @quiz_router.post("/quiz/{quiz_id}/add-questions")
-# def add_questions_to_quiz(quiz_id: int, question_ids: List[int], db: Session = Depends(get_db)):
-#     quiz_service = QuizService(QuizRepository(db), db)
-#     return quiz_service.add_questions_to_quiz(quiz_id, question_ids)
+@quiz_router.post("/create-quiz")
+def create_quiz(quiz_request: QuizCreateRequest, db: Session = Depends(get_db)):
+    quiz_service = QuizService(QuizRepository(db), db)
+    quiz = quiz_service.create_quiz_from_json(quiz_request.dict())
+    quiz_service.add_quiz(quiz)
+    return quiz

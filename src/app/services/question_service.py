@@ -98,38 +98,4 @@ class QuestionService:
             logging.error(f"Error getting questions: {e}")
             raise HTTPException(status_code=500, detail="Error getting questions")
         
-    # def get_question(self, question_id: int, include_correct_option: bool = False) -> QuestionResponse:
-    #     try:
-    #         question = self.question_repository.get_by_id(question_id)
-    #         if not question:
-    #             raise HTTPException(status_code=404, detail="Question not found")
-            
-    #         response = QuestionResponse(
-    #             id=question.id,
-    #             question_text=question.question_text,
-    #             options=question.options,
-    #             difficulty=question.difficulty_level
-    #         )
-    #         if include_correct_option:
-    #             response.correct_option = question.correct_option
-    #         return response
-    #     except Exception as e:
-    #         logging.error(f"Error getting question: {e}")
-    #         raise HTTPException(status_code=500, detail="Error getting question")
-
-    # def get_random_questions(self, language: str, difficulty: str, page: int, page_size: int) -> List[QuestionResponse]:
-    #     try:
-    #         questions = self.question_repository.get_random_questions(language, difficulty, page, page_size)
-    #         responses = []
-    #         for question in questions:
-    #             response = QuestionResponse(
-    #                 id=question.id,
-    #                 question_text=question.question_text,
-    #                 options=question.options,
-    #                 difficulty=question.difficulty_level
-    #             )
-    #             responses.append(response)
-    #         return responses
-    #     except Exception as e:
-    #         logging.error(f"Error getting random questions: {e}")
-    #         raise HTTPException(status_code=404, detail="Error getting random questions")
+  

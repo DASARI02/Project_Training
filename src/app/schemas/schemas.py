@@ -1,12 +1,13 @@
 from pydantic import BaseModel
-from typing import List, Dict
+from typing import List, Dict, Optional
 from src.app.models.quiz import DifficultyLevel, LanguageEnum
 
 class QuestionCreate(BaseModel):
     question_text: str
     options: Dict[str, str]
-    difficulty: DifficultyLevel
-    language: LanguageEnum
+    correct_option: str 
+    difficulty: str
+    language: str
 
 class QuestionSchema(BaseModel):
     id: int
@@ -59,9 +60,10 @@ class QuizResultsResponse(BaseModel):
 
 class QuizCreateRequest(BaseModel):
     title: str
-    language: str
+    language: str 
     description: str
-    question_data: List[QuestionCreate]
+    difficulty: str
+    questions: List[QuestionCreate]
 
 class QuestionResponseWithoutAnswer(BaseModel):
     question_id: int
@@ -88,6 +90,7 @@ class QuestionAttempt(BaseModel):
 
 class QuizAttempt(BaseModel):
     student_id: int
+    quiz_id: int 
     attempts: List[QuestionAttempt]
 
 class QuestionResult(BaseModel):
@@ -95,6 +98,7 @@ class QuestionResult(BaseModel):
     question_text: str
     options: Dict[str, str]
     selected_option: str
+    correct_option: str 
 
     class Config:
         from_attributes = True
@@ -107,6 +111,7 @@ class QuestionAttemptResult(BaseModel):
     language: str
     difficulty: str
 
+
     class Config:
         from_attributes = True
 
@@ -116,6 +121,7 @@ class QuizAttemptResult(BaseModel):
     total_score: float
     total_questions: int
     correct_answers: int
-
+    attempt_count: int 
+    previous_score: Optional[float] 
     class Config:
         from_attributes = True

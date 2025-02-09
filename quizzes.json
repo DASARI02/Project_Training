@@ -1,36 +1,85 @@
 {
     "quizzes": [
         {
-            "title": "python Basics Quiz",
+            "id": 1,
+            "title": "Python Basics Quiz",
             "language": "PYTHON",
-            "description": "A quiz to test your basic knowledge of python.",
+            "description": "A quiz to test your basic knowledge of Python.",
             "difficulty": "EASY",
             "questions": [
                 {
+                    "id": 1,
                     "question_text": "What is the capital of France?",
                     "options": {"A": "Paris", "B": "London", "C": "Berlin", "D": "Madrid"},
                     "correct_option": "A",
                     "difficulty": "EASY"
                 },
                 {
+                    "id": 2,
                     "question_text": "Who wrote 'To Kill a Mockingbird'?",
                     "options": {"A": "Harper Lee", "B": "Mark Twain", "C": "J.K. Rowling", "D": "Ernest Hemingway"},
                     "correct_option": "A",
+                    "difficulty": "MEDIUM"
+                },
+                {
+                    "id": 3,
+                    "question_text": "What is the largest planet in our solar system?",
+                    "options": {"A": "Earth", "B": "Mars", "C": "Jupiter", "D": "Saturn"},
+                    "correct_option": "C",
+                    "difficulty": "EASY"
+                },
+                {
+                    "id": 4,
+                    "question_text": "What is the speed of light?",
+                    "options": {"A": "300,000 km/s", "B": "150,000 km/s", "C": "450,000 km/s", "D": "600,000 km/s"},
+                    "correct_option": "A",
+                    "difficulty": "HARD"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Advanced Java Quiz",
+            "language": "JAVA",
+            "description": "A quiz to test your advanced knowledge of Java.",
+            "difficulty": "MEDIUM",
+            "questions": [
+                {
+                    "id": 5,
+                    "question_text": "Who painted the Mona Lisa?",
+                    "options": {"A": "Vincent van Gogh", "B": "Pablo Picasso", "C": "Leonardo da Vinci", "D": "Claude Monet"},
+                    "correct_option": "C",
+                    "difficulty": "MEDIUM"
+                },
+                {
+                    "id": 6,
+                    "question_text": "Who discovered penicillin?",
+                    "options": {"A": "Marie Curie", "B": "Alexander Fleming", "C": "Isaac Newton", "D": "Albert Einstein"},
+                    "correct_option": "B",
                     "difficulty": "MEDIUM"
                 }
             ]
         },
         {
-            "title": "Advanced java Quiz",
-            "language": "JAVA",
-            "description": "A quiz to test your advanced knowledge of java.",
-            "difficulty": "MEDIUM",
+            "id": 3,
+            "title": "C++ Basics Quiz",
+            "language": "C++",
+            "description": "A quiz to test your basic knowledge of C++.",
+            "difficulty": "EASY",
             "questions": [
                 {
-                    "question_text": "Who painted the Mona Lisa?",
-                    "options": {"A": "Vincent van Gogh", "B": "Pablo Picasso", "C": "Leonardo da Vinci", "D": "Claude Monet"},
+                    "id": 7,
+                    "question_text": "What is the chemical symbol for water?",
+                    "options": {"A": "H2O", "B": "O2", "C": "CO2", "D": "NaCl"},
+                    "correct_option": "A",
+                    "difficulty": "EASY"
+                },
+                {
+                    "id": 8,
+                    "question_text": "What is the powerhouse of the cell?",
+                    "options": {"A": "Nucleus", "B": "Ribosome", "C": "Mitochondria", "D": "Chloroplast"},
                     "correct_option": "C",
-                    "difficulty": "MEDIUM"
+                    "difficulty": "EASY"
                 }
             ]
         }
