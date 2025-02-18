@@ -24,7 +24,8 @@ def login(user_login: UserLogin, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Invalid credentials")
     access_token_expires = timedelta(minutes=settings.access_token_expires_minutes)
     access_token = auth_service.create_access_token(
-        data={"sub": user.id}, expires_delta=access_token_expires
+        data={"sub": str(user.id), "username": user.username, "role": user.role}, 
+        expires_delta=access_token_expires
     )
     return {
         "access_token": access_token,

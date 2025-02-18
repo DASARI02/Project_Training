@@ -2,7 +2,7 @@ from typing import List, Dict
 from src.app.repository.quiz_repository import QuizRepository
 from src.app.models.quiz import Quiz, LanguageEnum, DifficultyLevel, quiz_question_association, QuizAttemptRecord
 from src.app.models.quiz import QuestionResultRecord, Question
-from src.app.schemas.schemas import QuizResponse, QuestionResponse, QuizAttempt,  ResultSchema, QuizResultsResponse, QuizAttemptResult, QuestionResult, QuestionAttemptResult
+from src.app.schemas.schemas import QuizResponse, QuestionResponse, QuizAttempt,  QuizCreateRequest, QuizAttemptResult, QuestionResult, QuestionAttemptResult
 from fastapi import HTTPException, Depends
 from sqlalchemy.orm import Session, joinedload
 from sqlalchemy.sql.expression import func
@@ -229,6 +229,19 @@ class QuizService:
 
     def add(self, quiz: Quiz):
         self.db.add(quiz)
+        self.db.commit()
+        self.db.refresh(quiz)
+        return quiz
+
+    def delete_quiz(self, quiz_id: int):
+        quiz = self.get_quiz(quiz_id)
+        self.db.delete(quiz)
+        self.db.commit()
+
+    def update_quiz(self, quiz_id: int, quiz_update: QuizCreateRequest) -> Quiz:
+        quiz = self.get_quiz(quiz_id)
+        for key, value in quiz_update.dict().items():
+            setattr(quiz, key, value)
         self.db.commit()
         self.db.refresh(quiz)
         return quiz

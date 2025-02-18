@@ -9,6 +9,7 @@ class LanguageEnum(enum.Enum):
     PYTHON = "PYTHON"
     JAVA = "JAVA"
     CPP = "C++"
+    JAVASCRIPT = "JAVASCRIPT"
 
 class DifficultyLevel(enum.Enum):
     EASY = "EASY"

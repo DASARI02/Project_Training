@@ -13,6 +13,7 @@ class AuthService:
 
     def create_access_token(self, data: dict, expires_delta: Optional[timedelta] = None):
         to_encode = data.copy()
+        to_encode["sub"] = str(to_encode["sub"]) 
         expire = datetime.utcnow() + (expires_delta or timedelta(minutes=settings.access_token_expires_minutes))
         to_encode.update({"exp": expire})
         encoded_jwt = jwt.encode(to_encode, settings.secret_key, algorithm=settings.algorithm)

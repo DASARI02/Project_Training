@@ -25,11 +25,27 @@
             "difficulty": "EASY"
         },
         {
+            "question_text": "What is the speed of light?",
+            "language": "PYTHON",
+            "quiz_id": 1,
+            "options": {"A": "300,000 km/s", "B": "150,000 km/s", "C": "450,000 km/s", "D": "600,000 km/s"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
             "question_text": "Who painted the Mona Lisa?",
             "language": "JAVA",
             "quiz_id": 2,
             "options": {"A": "Vincent van Gogh", "B": "Pablo Picasso", "C": "Leonardo da Vinci", "D": "Claude Monet"},
             "correct_option": "C",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "Who discovered penicillin?",
+            "language": "JAVA",
+            "quiz_id": 2,
+            "options": {"A": "Marie Curie", "B": "Alexander Fleming", "C": "Isaac Newton", "D": "Albert Einstein"},
+            "correct_option": "B",
             "difficulty": "MEDIUM"
         },
         {
@@ -41,27 +57,275 @@
             "difficulty": "EASY"
         },
         {
-            "question_text": "What is the speed of light?",
-            "language": "PYTHON",
-            "quiz_id": 1,
-            "options": {"A": "300,000 km/s", "B": "150,000 km/s", "C": "450,000 km/s", "D": "600,000 km/s"},
-            "correct_option": "A",
-            "difficulty": "HARD"
-        },
-        {
-            "question_text": "Who discovered penicillin?",
-            "language": "JAVA",
-            "quiz_id": 2,
-            "options": {"A": "Marie Curie", "B": "Alexander Fleming", "C": "Isaac Newton", "D": "Albert Einstein"},
-            "correct_option": "B",
-            "difficulty": "MEDIUM"
-        },
-        {
             "question_text": "What is the powerhouse of the cell?",
             "language": "C++",
             "quiz_id": 3,
             "options": {"A": "Nucleus", "B": "Ribosome", "C": "Mitochondria", "D": "Chloroplast"},
             "correct_option": "C",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "What does C++ stand for?",
+            "language": "JAVASCRIPT",
+            "quiz_id": 4,
+            "options": {"A": "Hyper Text Markup Language", "B": "Home Tool Markup Language", "C": "Hyperlinks and Text Markup Language", "D": "Hyperlinking Text Marking Language"},
+            "correct_option": "A",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "Which company developed JavaScript?",
+            "language": "JAVASCRIPT",
+            "quiz_id": 4,
+            "options": {"A": "Netscape", "B": "Microsoft", "C": "Sun Microsystems", "D": "Oracle"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the time complexity of binary search?",
+            "language": "PYTHON",
+            "quiz_id": 5,
+            "options": {"A": "O(n)", "B": "O(log n)", "C": "O(n log n)", "D": "O(1)"},
+            "correct_option": "B",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "Which data structure uses LIFO (Last In First Out)?",
+            "language": "PYTHON",
+            "quiz_id": 5,
+            "options": {"A": "Queue", "B": "Stack", "C": "Linked List", "D": "Tree"},
+            "correct_option": "B",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the main function of an operating system?",
+            "language": "PYTHON",
+            "quiz_id": 6,
+            "options": {"A": "Manage hardware resources", "B": "Provide user interface", "C": "Execute and provide services for applications software", "D": "All of the above"},
+            "correct_option": "D",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "Which of the following is not an operating system?",
+            "language": "PYTHON",
+            "quiz_id": 6,
+            "options": {"A": "Windows", "B": "Linux", "C": "Oracle", "D": "MacOS"},
+            "correct_option": "C",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "What does LAN stand for?",
+            "language": "PYTHON",
+            "quiz_id": 7,
+            "options": {"A": "Local Area Network", "B": "Large Area Network", "C": "Long Area Network", "D": "Local Access Network"},
+            "correct_option": "A",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "Which protocol is used to send email?",
+            "language": "PYTHON",
+            "quiz_id": 7,
+            "options": {"A": "FTP", "B": "HTTP", "C": "SMTP", "D": "SNMP"},
+            "correct_option": "C",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What does JAVA stand for?",
+            "language": "JAVA",
+            "quiz_id": 8,
+            "options": {"A": "Structured Query Language", "B": "Structured Question Language", "C": "Simple Query Language", "D": "Simple Question Language"},
+            "correct_option": "A",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "Which of the following is a NoJAVA database?",
+            "language": "JAVA",
+            "quiz_id": 8,
+            "options": {"A": "MyJAVA", "B": "PostgreJAVA", "C": "MongoDB", "D": "JAVAite"},
+            "correct_option": "C",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is a primary key?",
+            "language": "JAVA",
+            "quiz_id": 8,
+            "options": {"A": "A unique identifier for a record", "B": "A field that can be left empty", "C": "A field that stores large amounts of data", "D": "A field that links to another table"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is normalization in databases?",
+            "language": "JAVA",
+            "quiz_id": 8,
+            "options": {"A": "Organizing data to reduce redundancy", "B": "Increasing data redundancy", "C": "Creating backup copies of data", "D": "Encrypting data for security"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is overfitting in machine learning?",
+            "language": "PYTHON",
+            "quiz_id": 9,
+            "options": {"A": "When the model performs well on training data but poorly on test data", "B": "When the model performs well on both training and test data", "C": "When the model performs poorly on both training and test data", "D": "When the model performs poorly on training data but well on test data"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is a confusion matrix?",
+            "language": "PYTHON",
+            "quiz_id": 9,
+            "options": {"A": "A table used to describe the performance of a classification model", "B": "A matrix used to store data", "C": "A method to normalize data", "D": "A technique to reduce overfitting"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the purpose of cross-validation?",
+            "language": "PYTHON",
+            "quiz_id": 9,
+            "options": {"A": "To evaluate the performance of a model", "B": "To increase the size of the dataset", "C": "To reduce the dimensionality of data", "D": "To improve the accuracy of predictions"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is a neural network?",
+            "language": "PYTHON",
+            "quiz_id": 9,
+            "options": {"A": "A computational model inspired by the human brain", "B": "A type of database", "C": "A method to store large amounts of data", "D": "A technique to encrypt data"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the Turing Test?",
+            "language": "PYTHON",
+            "quiz_id": 12,
+            "options": {"A": "A test to determine if a machine can exhibit intelligent behavior equivalent to a human", "B": "A test to measure the speed of a computer", "C": "A test to evaluate the accuracy of a model", "D": "A test to check the security of a system"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is reinforcement learning?",
+            "language": "PYTHON",
+            "quiz_id": 12,
+            "options": {"A": "A type of machine learning where an agent learns by interacting with its environment", "B": "A method to store data", "C": "A technique to encrypt data", "D": "A way to backup data"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the purpose of a loss function in machine learning?",
+            "language": "PYTHON",
+            "quiz_id": 12,
+            "options": {"A": "To measure how well a model's predictions match the actual outcomes", "B": "To increase the size of the dataset", "C": "To reduce the dimensionality of data", "D": "To improve the accuracy of predictions"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is IaaS?",
+            "language": "PYTHON",
+            "quiz_id": 13,
+            "options": {"A": "Infrastructure as a Service", "B": "Internet as a Service", "C": "Information as a Service", "D": "Integration as a Service"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "Which of the following is a cloud computing platform?",
+            "language": "PYTHON",
+            "quiz_id": 13,
+            "options": {"A": "AWS", "B": "Windows", "C": "Linux", "D": "Oracle"},
+            "correct_option": "A",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "What is the main benefit of cloud computing?",
+            "language": "PYTHON",
+            "quiz_id": 13,
+            "options": {"A": "Scalability", "B": "Cost-efficiency", "C": "Accessibility", "D": "All of the above"},
+            "correct_option": "D",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What does SaaS stand for?",
+            "language": "PYTHON",
+            "quiz_id": 13,
+            "options": {"A": "Software as a Service", "B": "System as a Service", "C": "Security as a Service", "D": "Storage as a Service"},
+            "correct_option": "A",
+            "difficulty": "EASY"
+        },
+        {
+            "question_text": "What is a zero-day vulnerability?",
+            "language": "PYTHON",
+            "quiz_id": 14,
+            "options": {"A": "A vulnerability that is unknown to the software vendor", "B": "A vulnerability that has been patched", "C": "A vulnerability that is known but not yet exploited", "D": "A vulnerability that is only theoretical"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is the purpose of a honeypot in cybersecurity?",
+            "language": "PYTHON",
+            "quiz_id": 14,
+            "options": {"A": "To attract and trap attackers", "B": "To encrypt data", "C": "To backup data", "D": "To monitor network traffic"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is social engineering?",
+            "language": "PYTHON",
+            "quiz_id": 14,
+            "options": {"A": "Manipulating people into divulging confidential information", "B": "A method to encrypt data", "C": "A technique to backup data", "D": "A type of firewall"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is the purpose of a digital certificate?",
+            "language": "PYTHON",
+            "quiz_id": 14,
+            "options": {"A": "To verify the identity of a user or device", "B": "To encrypt data", "C": "To backup data", "D": "To monitor network traffic"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is a blockchain?",
+            "language": "PYTHON",
+            "quiz_id": 15,
+            "options": {"A": "A distributed ledger technology", "B": "A type of database", "C": "A method to encrypt data", "D": "A technique to backup data"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is a smart contract?",
+            "language": "PYTHON",
+            "quiz_id": 15,
+            "options": {"A": "A self-executing contract with the terms directly written into code", "B": "A type of legal document", "C": "A method to encrypt data", "D": "A technique to backup data"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the purpose of mining in blockchain?",
+            "language": "PYTHON",
+            "quiz_id": 15,
+            "options": {"A": "To validate and record transactions", "B": "To encrypt data", "C": "To backup data", "D": "To monitor network traffic"},
+            "correct_option": "A",
+            "difficulty": "HARD"
+        },
+        {
+            "question_text": "What is a cryptocurrency?",
+            "language": "PYTHON",
+            "quiz_id": 15,
+            "options": {"A": "A digital or virtual currency that uses cryptography for security", "B": "A type of database", "C": "A method to store large amounts of data", "D": "A technique to encrypt data"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the Agile methodology?",
+            "language": "PYTHON",
+            "quiz_id": 16,
+            "options": {"A": "A project management approach that emphasizes flexibility and collaboration", "B": "A method to encrypt data", "C": "A technique to backup data", "D": "A type of database"},
+            "correct_option": "A",
+            "difficulty": "MEDIUM"
+        },
+        {
+            "question_text": "What is the purpose of version control?",
+            "language": "PYTHON",
+            "quiz_id": 16,
+            "options": {"A": "To manage changes to source code over time", "B": "To encrypt data", "C": "To backup data", "D": "To monitor network traffic"},
+            "correct_option": "A",
             "difficulty": "EASY"
         }
     ]

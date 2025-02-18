@@ -13,12 +13,12 @@ class UserRepository:
     def get_user_by_username(self, username: str) -> User:
         return self.db_session.query(User).filter(User.username == username).first()
     
-    def create_user(self, username: str, hashed_password: str, is_admin: bool = False, role: str = "student") -> User:
+    def create_user(self, username: str, hashed_password: str, role: str = "student") -> User:
         existing_user = self.get_user_by_username(username)
         if existing_user:
             raise HTTPException(status_code=400, detail="Username already exists")
         
-        user = User(username=username, hashed_password=hashed_password, is_admin=is_admin, role=role)
+        user = User(username=username, hashed_password=hashed_password, role=role)
         self.db_session.add(user)
         try:
             self.db_session.commit()

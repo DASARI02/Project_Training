@@ -4,6 +4,8 @@ from src.app.repository.user_repository import UserRepository
 from sqlalchemy.orm import Session
 from src.app.config.database import get_db
 from src.app.schemas.user_schemas import UserResponse
+from src.app.auth.auth import get_current_admin_user
+from src.app.models.user import User 
 
 user_router = APIRouter()
 

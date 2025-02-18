@@ -82,6 +82,417 @@
                     "difficulty": "EASY"
                 }
             ]
-        }
-    ]
-}
+        },
+        {
+            "id": 4,
+            "title": "JavaScript Fundamentals Quiz",
+            "language": "JAVASCRIPT",
+            "description": "A quiz to test your fundamental knowledge of JavaScript.",
+            "difficulty": "EASY",
+            "questions": [
+                {
+                    "id": 9,
+                    "question_text": "What does C++ stand for?",
+                    "options": {"A": "Hyper Text Markup Language", "B": "Home Tool Markup Language", "C": "Hyperlinks and Text Markup Language", "D": "Hyperlinking Text Marking Language"},
+                    "correct_option": "A",
+                    "difficulty": "EASY"
+                },
+                {
+                    "id": 10,
+                    "question_text": "Which company developed JavaScript?",
+                    "options": {"A": "Netscape", "B": "Microsoft", "C": "Sun Microsystems", "D": "Oracle"},
+                    "correct_option": "A",
+                    "difficulty": "MEDIUM"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Data Structures Quiz",
+            "language": "PYTHON",
+            "description": "A quiz to test your knowledge of data structures.",
+            "difficulty": "HARD",
+            "questions": [
+                {
+                    "id": 11,
+                    "question_text": "What is the time complexity of binary search?",
+                    "options": {"A": "O(n)", "B": "O(log n)", "C": "O(n log n)", "D": "O(1)"},
+                    "correct_option": "B",
+                    "difficulty": "HARD"
+                },
+                {
+                    "id": 12,
+                    "question_text": "Which data structure uses LIFO (Last In First Out)?",
+                    "options": {"A": "Queue", "B": "Stack", "C": "Linked List", "D": "Tree"},
+                    "correct_option": "B",
+                    "difficulty": "MEDIUM"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Operating Systems Quiz",
+            "language": "PYTHON",
+            "description": "A quiz to test your knowledge of operating systems.",
+            "difficulty": "MEDIUM",
+            "questions": [
+                {
+                    "id": 13,
+                    "question_text": "What is the main function of an operating system?",
+                    "options": {"A": "Manage hardware resources", "B": "Provide user interface", "C": "Execute and provide services for applications software", "D": "All of the above"},
+                    "correct_option": "D",
+                    "difficulty": "MEDIUM"
+                },
+                {
+                    "id": 14,
+                    "question_text": "Which of the following is not an operating system?",
+                    "options": {"A": "Windows", "B": "Linux", "C": "Oracle", "D": "MacOS"},
+                    "correct_option": "C",
+                    "difficulty": "EASY"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Networking Basics Quiz",
+            "language": "PYTHON",
+            "description": "A quiz to test your basic knowledge of networking.",
+            "difficulty": "EASY",
+            "questions": [
+                {
+                    "id": 15,
+                    "question_text": "What does LAN stand for?",
+                    "options": {"A": "Local Area Network", "B": "Large Area Network", "C": "Long Area Network", "D": "Local Access Network"},
+                    "correct_option": "A",
+                    "difficulty": "EASY"
+                },
+                {
+                    "id": 16,
+                    "question_text": "Which protocol is used to send email?",
+                    "options": {"A": "FTP", "B": "HTTP", "C": "SMTP", "D": "SNMP"},
+                    "correct_option": "C",
+                    "difficulty": "MEDIUM"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Database Management Quiz",
+            "language": "JAVA",
+            "description": "A quiz to test your knowledge of database management.",
+            "difficulty": "HARD",
+            "questions": [
+                {
+                    "id": 17,
+                    "question_text": "What does JAVA stand for?",
+                    "options": {"A": "Structured Query Language", "B": "Structured Question Language", "C": "Simple Query Language", "D": "Simple Question Language"},
+                    "correct_option": "A",
+                    "difficulty": "EASY"
+                },
+                {
+                    "id": 18,
+                    "question_text": "Which of the following is a NoJAVA database?",
+                    "options": {"A": "MyJAVA", "B": "PostgreJAVA", "C": "MongoDB", "D": "JAVAite"},
+                    "correct_option": "C",
+                    "difficulty": "MEDIUM"
+                },
+                {
+                    "id": 19,
+                    "question_text": "What is a primary key?",
+                    "options": {"A": "A unique identifier for a record", "B": "A field that can be left empty", "C": "A field that stores large amounts of data", "D": "A field that links to another table"},
+                    "correct_option": "A",
+                    "difficulty": "MEDIUM"
+                },
+                {
+                    "id": 20,
+                    "question_text": "What is normalization in databases?",
+                    "options": {"A": "Organizing data to reduce redundancy", "B": "Increasing data redundancy", "C": "Creating backup copies of data", "D": "Encrypting data for security"},
+                    "correct_option": "A",
+                    "difficulty": "HARD"
+                }
+            ]
+            },
+            {
+                "id": 9,
+                "title": "Machine Learning Quiz",
+                "language": "PYTHON",
+                "description": "A quiz to test your knowledge of machine learning concepts.",
+                "difficulty": "HARD",
+                "questions": [
+                    {
+                        "id": 21,
+                        "question_text": "What is overfitting in machine learning?",
+                        "options": {"A": "When the model performs well on training data but poorly on test data", "B": "When the model performs well on both training and test data", "C": "When the model performs poorly on both training and test data", "D": "When the model performs poorly on training data but well on test data"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    },
+                    {
+                        "id": 22,
+                        "question_text": "What is a confusion matrix?",
+                        "options": {"A": "A table used to describe the performance of a classification model", "B": "A matrix used to store data", "C": "A method to normalize data", "D": "A technique to reduce overfitting"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 23,
+                        "question_text": "What is the purpose of cross-validation?",
+                        "options": {"A": "To evaluate the performance of a model", "B": "To increase the size of the dataset", "C": "To reduce the dimensionality of data", "D": "To improve the accuracy of predictions"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    },
+                    {
+                        "id": 24,
+                        "question_text": "What is a neural network?",
+                        "options": {"A": "A computational model inspired by the human brain", "B": "A type of database", "C": "A method to store large amounts of data", "D": "A technique to encrypt data"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "title": "Web Development Quiz",
+                "language": "C++",
+                "description": "A quiz to test your knowledge of web development.",
+                "difficulty": "EASY",
+                "questions": [
+                    {
+                        "id": 25,
+                        "question_text": "What does CSS stand for?",
+                        "options": {"A": "Cascading Style Sheets", "B": "Computer Style Sheets", "C": "Creative Style Sheets", "D": "Colorful Style Sheets"},
+                        "correct_option": "A",
+                        "difficulty": "EASY"
+                    },
+                    {
+                        "id": 26,
+                        "question_text": "What is the purpose of JavaScript in web development?",
+                        "options": {"A": "To style web pages", "B": "To structure web pages", "C": "To add interactivity to web pages", "D": "To store data"},
+                        "correct_option": "C",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 27,
+                        "question_text": "What is the correct C++ element for inserting a line break?",
+                        "options": {"A": "<br>", "B": "<lb>", "C": "<break>", "D": "<line>"},
+                        "correct_option": "A",
+                        "difficulty": "EASY"
+                    },
+                    {
+                        "id": 28,
+                        "question_text": "What is the purpose of the <head> element in C++?",
+                        "options": {"A": "To contain metadata about the document", "B": "To display the main content of the document", "C": "To create a header for the document", "D": "To link to external resources"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "title": "Cybersecurity Quiz",
+                "language": "PYTHON",
+                "description": "A quiz to test your knowledge of cybersecurity concepts.",
+                "difficulty": "HARD",
+                "questions": [
+                    {
+                        "id": 29,
+                        "question_text": "What is a firewall?",
+                        "options": {"A": "A security system that monitors and controls incoming and outgoing network traffic", "B": "A type of malware", "C": "A method to encrypt data", "D": "A technique to backup data"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 30,
+                        "question_text": "What is phishing?",
+                        "options": {"A": "A method to steal sensitive information by pretending to be a trustworthy entity", "B": "A type of firewall", "C": "A technique to encrypt data", "D": "A method to backup data"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    },
+                    {
+                        "id": 31,
+                        "question_text": "What is a VPN?",
+                        "options": {"A": "Virtual Private Network", "B": "Virtual Public Network", "C": "Virtual Protected Network", "D": "Virtual Personal Network"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 32,
+                        "question_text": "What is the purpose of encryption?",
+                        "options": {"A": "To protect data by converting it into a secure format", "B": "To backup data", "C": "To compress data", "D": "To delete data"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "title": "Artificial Intelligence Quiz",
+                "language": "PYTHON",
+                "description": "A quiz to test your knowledge of artificial intelligence concepts.",
+                "difficulty": "HARD",
+                "questions": [
+                    {
+                        "id": 33,
+                        "question_text": "What is the Turing Test?",
+                        "options": {"A": "A test to determine if a machine can exhibit intelligent behavior equivalent to a human", "B": "A test to measure the speed of a computer", "C": "A test to evaluate the accuracy of a model", "D": "A test to check the security of a system"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    },
+                    {
+                        "id": 34,
+                        "question_text": "What is reinforcement learning?",
+                        "options": {"A": "A type of machine learning where an agent learns by interacting with its environment", "B": "A method to store data", "C": "A technique to encrypt data", "D": "A way to backup data"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 35,
+                        "question_text": "What is a neural network?",
+                        "options": {"A": "A computational model inspired by the human brain", "B": "A type of database", "C": "A method to store large amounts of data", "D": "A technique to encrypt data"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 36,
+                        "question_text": "What is the purpose of a loss function in machine learning?",
+                        "options": {"A": "To measure how well a model's predictions match the actual outcomes", "B": "To increase the size of the dataset", "C": "To reduce the dimensionality of data", "D": "To improve the accuracy of predictions"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    }
+                ]
+            },
+            {
+                "id": 13,
+                "title": "Cloud Computing Quiz",
+                "language": "PYTHON",
+                "description": "A quiz to test your knowledge of cloud computing concepts.",
+                "difficulty": "MEDIUM",
+                "questions": [
+                    {
+                        "id": 37,
+                        "question_text": "What is IaaS?",
+                        "options": {"A": "Infrastructure as a Service", "B": "Internet as a Service", "C": "Information as a Service", "D": "Integration as a Service"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 38,
+                        "question_text": "Which of the following is a cloud computing platform?",
+                        "options": {"A": "AWS", "B": "Windows", "C": "Linux", "D": "Oracle"},
+                        "correct_option": "A",
+                        "difficulty": "EASY"
+                    },
+                    {
+                        "id": 39,
+                        "question_text": "What is the main benefit of cloud computing?",
+                        "options": {"A": "Scalability", "B": "Cost-efficiency", "C": "Accessibility", "D": "All of the above"},
+                        "correct_option": "D",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 40,
+                        "question_text": "What does SaaS stand for?",
+                        "options": {"A": "Software as a Service", "B": "System as a Service", "C": "Security as a Service", "D": "Storage as a Service"},
+                        "correct_option": "A",
+                        "difficulty": "EASY"
+                    }
+                ]
+            },
+            {
+                "id": 14,
+                "title": "Cybersecurity Advanced Quiz",
+                "language": "PYTHON",
+                "description": "A quiz to test your advanced knowledge of cybersecurity.",
+                "difficulty": "HARD",
+                "questions": [
+                    {
+                        "id": 41,
+                        "question_text": "What is a zero-day vulnerability?",
+                        "options": {"A": "A vulnerability that is unknown to the software vendor", "B": "A vulnerability that has been patched", "C": "A vulnerability that is known but not yet exploited", "D": "A vulnerability that is only theoretical"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    },
+                    {
+                        "id": 42,
+                        "question_text": "What is the purpose of a honeypot in cybersecurity?",
+                        "options": {"A": "To attract and trap attackers", "B": "To encrypt data", "C": "To backup data", "D": "To monitor network traffic"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 43,
+                        "question_text": "What is social engineering?",
+                        "options": {"A": "Manipulating people into divulging confidential information", "B": "A method to encrypt data", "C": "A technique to backup data", "D": "A type of firewall"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    },
+                    {
+                        "id": 44,
+                        "question_text": "What is the purpose of a digital certificate?",
+                        "options": {"A": "To verify the identity of a user or device", "B": "To encrypt data", "C": "To backup data", "D": "To monitor network traffic"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "title": "Blockchain Technology Quiz",
+                "language": "PYTHON",
+                "description": "A quiz to test your knowledge of blockchain technology.",
+                "difficulty": "HARD",
+                "questions": [
+                    {
+                        "id": 45,
+                        "question_text": "What is a blockchain?",
+                        "options": {"A": "A distributed ledger technology", "B": "A type of database", "C": "A method to encrypt data", "D": "A technique to backup data"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    },
+                    {
+                        "id": 46,
+                        "question_text": "What is a smart contract?",
+                        "options": {"A": "A self-executing contract with the terms directly written into code", "B": "A type of legal document", "C": "A method to encrypt data", "D": "A technique to backup data"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 47,
+                        "question_text": "What is the purpose of mining in blockchain?",
+                        "options": {"A": "To validate and record transactions", "B": "To encrypt data", "C": "To backup data", "D": "To monitor network traffic"},
+                        "correct_option": "A",
+                        "difficulty": "HARD"
+                    },
+                    {
+                        "id": 48,
+                        "question_text": "What is a cryptocurrency?",
+                        "options": {"A": "A digital or virtual currency that uses cryptography for security", "B": "A type of database", "C": "A method to store large amounts of data", "D": "A technique to encrypt data"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    }
+                ]
+            },
+            {
+                "id": 16,
+                "title": "Software Engineering Quiz",
+                "language": "PYTHON",
+                "description": "A quiz to test your knowledge of software engineering principles.",
+                "difficulty": "MEDIUM",
+                "questions": [
+                    {
+                        "id": 49,
+                        "question_text": "What is the Agile methodology?",
+                        "options": {"A": "A project management approach that emphasizes flexibility and collaboration", "B": "A method to encrypt data", "C": "A technique to backup data", "D": "A type of database"},
+                        "correct_option": "A",
+                        "difficulty": "MEDIUM"
+                    },
+                    {
+                        "id": 50,
+                        "question_text": "What is the purpose of version control?",
+                        "options": {"A": "To manage changes to source code over time", "B": "To encrypt data", "C": "To backup data", "D": "To monitor network traffic"},
+                        "correct_option": "A",
+                        "difficulty": "EASY"
+                    }
+                ]
+            }
+        ]
+    }

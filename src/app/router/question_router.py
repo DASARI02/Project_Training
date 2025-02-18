@@ -1,19 +1,16 @@
-from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
 from src.app.config.database import get_db
 from src.app.services.question_service import QuestionService
-from src.app.services.quiz_service import QuizService
-from src.app.schemas.schemas import QuestionResponse, QuizAttempt, QuizAttemptResult, QuizResultsResponse
-from src.app.repository.question_repository import QuestionRepository
-from src.app.repository.quiz_repository import QuizRepository
-
+from src.app.schemas.schemas import QuestionResponse, QuestionCreate
+from src.app.auth.auth import get_current_admin_user, get_current_student_user
 from typing import List
-import json 
+import json
 import logging
 
 question_router = APIRouter()
 
-@question_router.post("/upload-questions")
+@question_router.post("/upload-questions", dependencies=[Depends(get_current_admin_user)])
 async def upload_questions(file: UploadFile = File(...), db: Session = Depends(get_db)):
     try:
         contents = await file.read()
@@ -35,7 +32,7 @@ async def upload_questions(file: UploadFile = File(...), db: Session = Depends(g
         logging.error(f"Error processing file: {e}")
         raise HTTPException(status_code=400, detail=f"Error processing file: {e}")
 
-@question_router.get("/questions", response_model=List[QuestionResponse])
+@question_router.get("/questions", response_model=List[QuestionResponse], dependencies=[Depends(get_current_student_user)])
 def get_questions_by_language_and_difficulty(language: str, difficulty: str, db: Session = Depends(get_db)):
     question_service = QuestionService(db)
     questions = question_service.get_questions_by_language_and_difficulty(language, difficulty)
@@ -43,3 +40,27 @@ def get_questions_by_language_and_difficulty(language: str, difficulty: str, db:
         raise HTTPException(status_code=404, detail="Questions not found for the given language and difficulty")
     return questions
 
+@question_router.post("/questions", dependencies=[Depends(get_current_admin_user)])
+def create_question(question_request: QuestionCreate, db: Session = Depends(get_db)):
+    question_service = QuestionService(db)
+    question = question_service.create_question_from_json(question_request.dict())
+    question_service.add(question)
+    return question
+
+@question_router.patch("/questions/{question_id}", dependencies=[Depends(get_current_admin_user)])
+def update_question(question_id: int, question_update: QuestionCreate, db: Session = Depends(get_db)):
+    question_service = QuestionService(db)
+    question = question_service.get_question_by_id(question_id)
+    if not question:
+        raise HTTPException(status_code=404, detail="Question not found")
+    updated_question = question_service.update_question(question_id, question_update)
+    return updated_question
+
+@question_router.delete("/questions/{question_id}", dependencies=[Depends(get_current_admin_user)])
+def delete_question(question_id: int, db: Session = Depends(get_db)):
+    question_service = QuestionService(db)
+    question = question_service.get_question_by_id(question_id)
+    if not question:
+        raise HTTPException(status_code=404, detail="Question not found")
+    question_service.delete_question(question_id)
+    return {"message": "Question deleted successfully"}

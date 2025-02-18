@@ -1,0 +1,25 @@
+# Ignore VS Code settings folder
+.vscode/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs
+*.log
+
+# Ignore environment variables (secrets)
+.env
+
+# Ignore compiled code and temporary files
+dist/
+build/
+
+# Ignore SQLite database files
+*.sqlite3
+*.db
+
+# Ignore Node.js dependencies
+node_modules/
